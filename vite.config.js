@@ -5,12 +5,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: 'dist', // ✅ Correct output directory for Vercel
-    chunkSizeWarningLimit: 1000, // ⚠️ Raise size warning threshold (optional)
+    outDir: 'dist',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // 📦 Split large dependencies into separate chunks
           if (id.includes('node_modules')) {
             return id
               .toString()
