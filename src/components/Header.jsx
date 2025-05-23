@@ -71,7 +71,7 @@ const Header = () => {
       {/* Header Section */}
       <div className='flex flex-auto font-serif bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500 py-6 px-10'>
         <div className='flex-1 text-3xl text-white font-bold pr-10'>
-         HI
+          Discover your full potential through MentorVerse's expert mentorship.
         </div>
         <div className='flex-1 pl-5 pr-5'>
           <p className='text-sm text-white'>"Unlock your true potential with MentorVerse — the platform that connects ambitious individuals with experienced mentors. Whether you're a student, professional, or career-changer, get personalized guidance and expert insights to accelerate your growth."</p>
