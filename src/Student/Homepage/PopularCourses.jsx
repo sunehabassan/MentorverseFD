@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from 'antd';
-import img from '../../assets/tech.JPG';
+import img from '../../assets/tech.jpg';
 import { CodeOutlined, DatabaseOutlined, RobotOutlined, CloudOutlined } from '@ant-design/icons';
 
 const PopularCourses = () => {
