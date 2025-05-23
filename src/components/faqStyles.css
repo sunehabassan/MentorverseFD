@@ -1,0 +1,7 @@
+.book-card {
+  perspective: 1000px;
+}
+.faq-collapse > .ant-collapse-item > .ant-collapse-header {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
