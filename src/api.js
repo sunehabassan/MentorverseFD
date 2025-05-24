@@ -1,8 +1,8 @@
-import axios from 'axios';
+// import axios from 'axios';
 
-const api = axios.create({
-    baseURL: "https://mentorbackend-i3ht.onrender.com",
-    // withCredentials: true,
-});
+// const api = axios.create({
+//     baseURL: "https://mentorbackend-i3ht.onrender.com",
+//     // withCredentials: true,
+// });
 
-export const googleAuth = (code) => api.post(`/google?code=${code}`);
+// export const googleAuth = (code) => api.post(`/google?code=${code}`);
