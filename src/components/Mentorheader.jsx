@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiLogOut, FiEdit } from "react-icons/fi";
 import axios from "axios";
-import { baseURL } from "/config";
+import { baseURL } from "../../config";
 
 const MentorHeader = () => {
   const [mentorProfile, setMentorProfile] = useState(null);
