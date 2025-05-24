@@ -7,6 +7,7 @@ import {
   IdcardOutlined,
   CommentOutlined,
 } from '@ant-design/icons';
+import { baseURL } from '../../config';
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -16,7 +17,7 @@ const TestimonialSection = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/auth/testimonial');
+        const res = await axios.get(`${baseURL}/api/auth/testimonial`);
         setTestimonials(res.data);
       } catch (error) {
         console.error("❌ Failed to load testimonials.");

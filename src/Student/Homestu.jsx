@@ -5,6 +5,7 @@ import LearningOpportunities from "./Homepage/LearningOpportunities";
 import PopularCourses from "./Homepage/PopularCourses";
 import Walpaperslider from "./Homepage/sllide";
 import AdvantagesCards from "./Homepage/AdvantagesCards";
+import Footer from "../components/Footer";
 
 const Homestu = () => {
   return (
@@ -16,6 +17,7 @@ const Homestu = () => {
       <PopularCourses />
       <LearningOpportunities />
       <AdvantagesCards />
+      <Footer/>
     </>
   );
 };

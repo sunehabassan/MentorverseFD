@@ -3,6 +3,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 // import { googleAuth } from "./api";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { baseURL } from "../config";
 
 const GoolgeLogin = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const GoolgeLogin = () => {
     try {
       if (authResult.code) {
    await axios
-          .post(`http://localhost:3000/api/auth/google?code=${authResult.code}`)
+          .post(`${baseURL}/api/auth/google?code=${authResult.code}`)
           .then((res) => {
             console.log("yeh ha res from backend", res);
             const { email, name, image } = res.data.user;

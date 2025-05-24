@@ -7,6 +7,7 @@ import {
   DownOutlined,
 } from '@ant-design/icons';
 import { motion } from 'framer-motion';
+import { baseURL } from '../../config';
 
 const { Panel } = Collapse;
 const { Search } = Input;
@@ -23,7 +24,7 @@ const FaqSection = () => {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/auth/faqs');
+        const response = await axios.get(`${baseURL}api/auth/faqs`);
         setFaqs(response.data);
         setFilteredFaqs(response.data);
       } catch (error) {

@@ -2,7 +2,7 @@
 import Header from './components/Header';
 import Footer from './components/Footer'
 import Walpaperslider from './components/Walpaperslider';
-// import BenefitsSection from './components/BenefitsSection';
+import BenefitsSection from './components/BenefitsSection';
 import TestimonialSection from './components/TestimonialSection';
 import HowItWorks from './components/HowItWorks';
 import FAQSection from './components/FAQSection';
@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <Header />
       <Walpaperslider />
-      {/* <BenefitsSection /> */}
+      <BenefitsSection />
       <TestimonialSection />
       <HowItWorks />
       <FAQSection />

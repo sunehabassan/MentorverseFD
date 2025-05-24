@@ -4,6 +4,7 @@ import { toast, ToastContainer, Bounce } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../config";
 
 const Mentorlog = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Mentorlog = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/Mentorlog", values);
+      const response = await axios.post(`${baseURL}/api/auth/Mentorlog`, values);
       if (response.data.success) {
         setResponseData(response.data.message);
 

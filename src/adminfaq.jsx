@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { baseURL } from "../config";
 
 const AdminFaqDashboard = () => {
   const [faqs, setFaqs] = useState([]);
@@ -9,7 +10,7 @@ const AdminFaqDashboard = () => {
     const fetchFaqs = async () => {
       try {
         // ✅ FIXED: Correct route to get ALL FAQs (answered or not)
-        const res = await axios.get("http://localhost:3000/api/auth/faqs/all");
+        const res = await axios.get(`${baseURL}/api/auth/faqs/all`)
         setFaqs(res.data);
       } catch (err) {
         console.error("Error fetching all FAQs", err);

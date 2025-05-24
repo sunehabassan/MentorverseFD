@@ -13,6 +13,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import SessionDetailsForm from "../SessionDetailsForm";
+import { baseURL } from "../../../config";
 
 
 
@@ -41,7 +42,7 @@ const MentorRequests = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/auth/requests?mentorEmail=${mentorEmail}`,
+        `${baseURL}se/api/auth/requests?mentorEmail=${mentorEmail}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -60,7 +61,7 @@ const MentorRequests = () => {
 const handleSessionSubmit = async (sessionLink) => {
   try {
     await axios.post(
-      "http://localhost:3000/api/auth/send-session-details",
+      `${baseURL}/api/auth/send-session-details`,
       {
         requestId: sessionModal.request._id,
         sessionLink,
@@ -88,7 +89,7 @@ const handleSessionSubmit = async (sessionLink) => {
 
     try {
       await axios.put(
-        "http://localhost:3000/api/auth/update-request",
+        `${baseURL}/api/auth/update-request`,
         { requestId, status },
         {
           headers: { Authorization: `Bearer ${token}` },

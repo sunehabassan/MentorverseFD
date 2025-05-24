@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import MentorHeader from '../components/Mentorheader';
+import { baseURL } from '../../config';
 
 const Feedbacks = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Feedbacks = () => {
 
   const onFinish = async (values) => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/testimonial', values);
+      const res = await axios.post(`${baseURL}/api/auth/testimonial`, values);
       if (res.data.success) {
         toast.success("✅ Testimonial submitted!");
         navigate("/home");

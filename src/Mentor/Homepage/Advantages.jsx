@@ -93,7 +93,7 @@ export const AdvantagesOfMentoring = () => (
           className="flex justify-center"
         >
           <Card
-            bordered={false}
+            variant={false}
             className={`relative ${adv.bgColor} p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transform transition duration-300 text-white flex flex-col items-center justify-center w-64 h-72`}
             style={{
               border: "1px solid rgba(255, 255, 255, 0.4)",

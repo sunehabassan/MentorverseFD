@@ -10,7 +10,7 @@ const cardVariants = {
 };
 
 export const HowToBecomeMentor = () => (
-  <div className="grid grid-cols-2 gap-4 p-4 bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500  h-[85vh] ">
+  <div className="grid grid-cols-2 gap-4 p-4 bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500  h-[100vh] ">
     <motion.div variants={cardVariants} initial="hidden" animate="visible">
       <Card bordered={true} className="!bg-white !border-orange-300 !border !p-4 !rounded-lg">
         <div className="flex items-center gap-2 mb-2">

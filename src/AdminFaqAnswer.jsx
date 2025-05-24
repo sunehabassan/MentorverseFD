@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
+import { baseURL } from '../config';
 
 const AdminFaqAnswer = () => {
   const { id } = useParams(); // Get ID from route
@@ -12,7 +13,7 @@ const AdminFaqAnswer = () => {
   useEffect(() => {
     const fetchFaq = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/auth/faqs/${id}`);
+        const res = await axios.get(`${baseURL}/api/auth/faqs/${id}`);
         setFaqData(res.data);
         setAnswer(res.data.answer || "");
       } catch (error) {
@@ -28,7 +29,7 @@ const AdminFaqAnswer = () => {
 
   const handleAnswerChange = async () => {
     try {
-      const response = await axios.put(`http://localhost:3000/api/auth/faqs/${id}`, { answer });
+      const response = await axios.put(`${baseURL}/api/auth/faqs/${id}`, { answer });
 
       if (response.data.success) {
         toast.success("✅ Answer updated successfully!");

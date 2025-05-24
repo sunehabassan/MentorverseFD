@@ -4,13 +4,14 @@ import { toast, ToastContainer, Bounce } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../config";
 const Studentlog = () => {
   const navigate = useNavigate();
   const [data, setResponseData] = useState("");
 
   const onFinish = async (values) => {
     try {
-        const response = await axios.post("http://localhost:3000/api/auth/Studentlog", values);
+        const response = await axios.post(`${baseURL}/api/auth/Studentlog`, values);
         if (response.data.success) {
             setResponseData(response.data.message);
 

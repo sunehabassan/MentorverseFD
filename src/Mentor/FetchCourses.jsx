@@ -42,7 +42,7 @@ const FetchCourses = () => {
 
   return (
    
-    <div className="min-h-screen px-6 py-12 bg-slate-900 text-white">
+    <div className="min-h-screen px-6 py-12 bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500 text-white">
       <Title className="text-center !text-orange-500">Available Courses by Mentors</Title>
 
       {loading ? (
