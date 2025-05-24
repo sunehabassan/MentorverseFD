@@ -30,7 +30,7 @@ const Header = () => {
           {[
             { name: "Home", path: "/", icon: <RiHome2Fill className="text-xl mr-2" /> },
             { name: "About Us", path: "/aboutus", icon: <RiInformationFill className="text-xl mr-2" /> },
-            { name: "Contact Us", path: "/contact", icon: <RiContactsFill className="text-xl mr-2" /> }
+            { name: "Contacts Us", path: "/contact", icon: <RiContactsFill className="text-xl mr-2" /> }
           ].map((link) => (
             <li key={link.name}>
               <Link
