@@ -10,7 +10,7 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { toast, ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { baseURL } from "/config";
+import { baseURL } from "../../../config";
 import pic1 from "../../../src/assets/name.jpg";
 import pic2 from "../../../src/assets/timeavail.jpg";
 import pic3 from "../../../src/assets/degree.png";
