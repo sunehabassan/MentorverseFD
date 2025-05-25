@@ -24,7 +24,7 @@ const FaqSection = () => {
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await axios.get(`${baseURL}api/auth/faqs`);
+        const response = await axios.get(`${baseURL}/api/auth/faqs`);
         setFaqs(response.data);
         setFilteredFaqs(response.data);
       } catch (error) {
