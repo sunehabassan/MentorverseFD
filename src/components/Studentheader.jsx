@@ -4,7 +4,7 @@ import { Button, Modal } from "antd";
 import { CgProfile } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiLogOut } from "react-icons/fi";
-import icon from "../../src/assets/icon.png"
+import icon from "../../src/assets/icon.PNG"
 const Studentheader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animate, setAnimate] = useState(true);

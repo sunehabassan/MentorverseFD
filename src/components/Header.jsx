@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiHome2Fill, RiInformationFill, RiContactsFill } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Button1 from "./Button1";
-import icon from "../../src/assets/icon.png";
+import icon from "../../src/assets/icon.PNG";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

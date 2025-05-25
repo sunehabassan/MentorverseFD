@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiLogOut, FiEdit } from "react-icons/fi";
 import axios from "axios";
 import { baseURL } from "../../config";
-import icon from "../../src/assets/icon.png"
+import icon from "../../src/assets/icon.PNG"
 const MentorHeader = () => {
   const [mentorProfile, setMentorProfile] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
