@@ -42,7 +42,7 @@ const MentorRequests = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${baseURL}se/api/auth/requests?mentorEmail=${mentorEmail}`,
+        `${baseURL}/api/auth/requests?mentorEmail=${mentorEmail}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
