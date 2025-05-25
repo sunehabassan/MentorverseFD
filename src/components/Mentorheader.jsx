@@ -45,7 +45,6 @@ const MentorHeader = () => {
 
   const navLinks = [
     { name: "Home", path: "/Homementor" },
-    { name: "My Students", path: "/Mystudents" },
     { name: "Requests", path: "/MentorRequests" },
     { name: "Contact Us", path: "/Contactment" },
     { name: "Add Courses", path: "/Courses" },

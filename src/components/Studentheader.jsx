@@ -75,7 +75,6 @@ const Studentheader = () => {
         <ul className="hidden lg:flex flex-wrap items-center gap-6 text-slate-200 text-lg font-medium">
           {[
             { name: "Home", path: "/homestu" },
-            { name: "My Mentors", path: "/mymentors" },
             { name: "Mentors", path: "/MentorCard" },
             { name: "Contact Us", path: "/Contactstu" },
             { name: "Feedback", path: "/Feedbacks" },
