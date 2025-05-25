@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiLogOut, FiEdit } from "react-icons/fi";
 import axios from "axios";
+import icon from"../../public/MYICON.png";
 import { baseURL } from "../../config";
 
 const MentorHeader = () => {
@@ -57,7 +58,7 @@ const MentorHeader = () => {
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <img src="/public/icon.png" alt="logo" className="w-12 h-12 rounded-full shadow-lg" />
+          <img src={icon} alt="logo" className="w-12 h-12 rounded-full shadow-lg" />
           <h1 className="text-2xl md:text-4xl font-extrabold text-white tracking-wide drop-shadow-md">MentorVerse</h1>
         </div>
 

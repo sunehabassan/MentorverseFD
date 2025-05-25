@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from 'antd';
+import icon from "../../public/MYICON.png"
 import { RiHome2Fill, RiInformationFill, RiContactsFill } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Button1 from "./Button1";
@@ -13,7 +14,7 @@ const Header = () => {
       <nav className="w-full max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo and Title */}
         <div className="flex items-center gap-3">
-          <img src="./public/icon.png" alt="logo" className="w-12 h-12 border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
+          <img src={icon} alt="logo" className="w-12 h-12 border-2 border-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300" />
           <h1 className="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-lg hover:text-orange-300 transition-colors duration-300">MentorVerse</h1>
         </div>
 
