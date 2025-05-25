@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Modal } from "antd";
-import icon from "../../public/MYICON.png"
 import { CgProfile } from "react-icons/cg";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiUser, FiLogOut } from "react-icons/fi";
@@ -66,7 +65,7 @@ const Studentheader = () => {
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 flex-wrap gap-4 lg:gap-0">
         <div className="flex items-center gap-3">
-          <img src={icon} alt="logo" className="w-10 h-10" />
+          <img src="./public/icon.png" alt="logo" className="w-10 h-10" />
           <h1 className="text-2xl md:text-4xl text-orange-500 font-bold">
             MentorVerse
           </h1>
