@@ -57,4 +57,9 @@
   background-size: 200% 200%;
   animation: border-spin 4s linear infinite;
 }
+/* Prevent horizontal scrolling on all pages */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
