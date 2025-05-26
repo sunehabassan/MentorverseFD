@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { RiHome2Fill, RiInformationFill, RiContactsFill } from "react-icons/ri";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Button1 from "./Button1";
-import icon from "../../src/assets/icon.PNG";
+import icon from "/icon.PNG";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full h-auto bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500 text-white shadow-lg font-serif sticky z-50">
+    <header className="w-full h-auto bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500 text-white  font-serif sticky top-0 z-50">
       {/* Navigation Bar */}
       <nav className="w-full max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo and Title */}
@@ -76,30 +76,9 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          {/* Auth/CTA Button in mobile view */}
           <Button1 />
         </ul>
       )}
-
-      {/* Hero Section */}
-      <div className="flex flex-col lg:flex-row font-serif bg-gradient-to-r from-gray-800 via-gray-600 to-orange-500 py-8 px-6 sm:px-10 gap-6 sm:gap-10">
-        {/* Left Text */}
-        <div className="flex-1 text-white text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
-          Discover your full potential through MentorVerse's expert mentorship.
-        </div>
-
-        {/* Right Text and CTA */}
-        <div className="flex-1 text-white text-sm sm:text-base">
-          <p>
-            "Unlock your true potential with MentorVerse — the platform that connects ambitious individuals with experienced mentors. Whether you're a student, professional, or career-changer, get personalized guidance and expert insights to accelerate your growth."
-          </p>
-          <Link to="/aboutus">
-            <button className="text-slate-100 bg-orange-500 px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 transition-all duration-300">
-              Explore More
-            </button>
-          </Link>
-        </div>
-      </div>
     </header>
   );
 };
