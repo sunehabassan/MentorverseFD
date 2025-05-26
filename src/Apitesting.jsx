@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import { baseURL } from "/config";
+import { UserOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
+import { baseURL } from '/config';
 import axios from 'axios';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
 import { GoogleLogin } from '@react-oauth/google';
+import { motion } from 'framer-motion';
+import 'react-toastify/dist/ReactToastify.css';
 
-const App = () => {
+const benefitData = [
+  { icon: "🌍", title: "Global Reach", desc: "Mentor students from around the world." },
+  { icon: "⏰", title: "Flexible Schedule", desc: "Teach when it suits you." },
+  { icon: "🎯", title: "Real Impact", desc: "Make a difference in someone's career." },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      type: "spring",
+    },
+  }),
+};
+
+const MentorRegister = () => {
   const [resData, setResData] = useState('');
   const navigate = useNavigate();
 
@@ -16,13 +37,13 @@ const App = () => {
       const response = await axios.post(`${baseURL}/api/auth/register`, values);
       if (response.data.success) {
         message.success('Registration successful!');
-        setResData(response.data.message);
         toast.success('🎉 You have registered successfully!', {
           autoClose: 2000,
           theme: 'light',
           transition: Bounce,
         });
         setTimeout(() => navigate('/Mentorlog'), 2500);
+        setResData(response.data.message);
       }
     } catch {
       message.error('Registration failed');
@@ -36,76 +57,115 @@ const App = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-white px-4">
-      <div
-        className="w-full max-w-md p-8 rounded-2xl shadow-md hover:shadow-2xl transition duration-500 border border-orange-200 
-        bg-white hover:bg-orange-50 transform hover:scale-105 animate-fade-in"
-      >
-        <h2 className="text-center text-3xl font-bold text-orange-500 mb-6 relative">
-          Mentor Registration
-          <span className="absolute left-1/2 transform -translate-x-1/2 bottom-[-8px] w-16 h-1 bg-orange-300 rounded-full"></span>
-        </h2>
+      <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl overflow-hidden md:flex animate-fade-in">
 
-        <Form name="register" onFinish={onFinish} layout="vertical">
-          <Form.Item
-            label={<span className="text-gray-700 font-medium">Username</span>}
-            name="username"
-            rules={[{ required: true, message: 'Please enter your username!' }]}
-          >
-            <Input placeholder="JohnDoe" className="hover:border-orange-400" />
-          </Form.Item>
+        {/* Left Column - Benefits */}
+        <div className="w-full md:w-1/2 bg-gradient-to-br from-orange-100 to-yellow-50 p-8 flex flex-col justify-center items-center">
+          <h2 className="text-3xl font-bold text-orange-500 text-center mb-6">Why Mentor With Us?</h2>
 
-          <Form.Item
-            label={<span className="text-gray-700 font-medium">Email</span>}
-            name="email"
-            rules={[
-              { required: true, message: 'Please enter your email!' },
-              { type: 'email', message: 'Enter a valid email!' },
-            ]}
-          >
-            <Input placeholder="john@example.com" className="hover:border-orange-400" />
-          </Form.Item>
-
-          <Form.Item
-            label={<span className="text-gray-700 font-medium">Password</span>}
-            name="password"
-            rules={[{ required: true, message: 'Please enter your password!' }]}
-          >
-            <Input.Password placeholder="********" className="hover:border-orange-400" />
-          </Form.Item>
-
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              block
-              className="bg-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-yellow-400 text-white font-semibold border-none transition-all duration-300"
-            >
-              Register
-            </Button>
-          </Form.Item>
-
-          <div className="text-center text-sm text-gray-600 mt-2">
-            Already have an account?
+          <div className="grid grid-cols-1 gap-4 w-full">
+            {benefitData.map((benefit, i) => (
+              <motion.div
+                key={benefit.title}
+                className="bg-white shadow-lg rounded-xl p-5 hover:shadow-xl transition"
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+              >
+                <div className="text-4xl mb-2">{benefit.icon}</div>
+                <div className="text-lg font-semibold text-orange-600">{benefit.title}</div>
+                <p className="text-sm text-gray-600">{benefit.desc}</p>
+              </motion.div>
+            ))}
           </div>
+        </div>
 
-          <Form.Item>
-            <Button
-              onClick={() => navigate('/Mentorlog')}
-              block
-              className="mt-2 border border-orange-500 text-orange-500 hover:bg-orange-100 transition-all"
+        {/* Right Column - Form */}
+        <div className="w-full md:w-1/2 px-6 py-10">
+          <h2 className="text-2xl font-bold text-center text-orange-600 mb-6">Mentor Registration</h2>
+
+          <Form name="register" onFinish={onFinish} layout="vertical" className="space-y-4">
+            <Form.Item
+              name="username"
+              rules={[{ required: true, message: 'Please enter your username!' }]}
             >
-              Sign In
-            </Button>
-          </Form.Item>
-        </Form>
-            <GoogleLogin/>
-        {resData && (
-          <div className="text-center text-green-600 mt-3 text-sm">{resData}</div>
-        )}
-        <ToastContainer />
+              <Input
+                size="large"
+                prefix={<UserOutlined className="text-orange-400" />}
+                placeholder="Username"
+                className="rounded-xl shadow-sm hover:shadow-md transition-all"
+              />
+            </Form.Item>
+
+            <Form.Item
+              name="email"
+              rules={[
+                { required: true, message: 'Please enter your email!' },
+                { type: 'email', message: 'Enter a valid email!' },
+              ]}
+            >
+              <Input
+                size="large"
+                prefix={<MailOutlined className="text-orange-400" />}
+                placeholder="Email"
+                className="rounded-xl shadow-sm hover:shadow-md transition-all"
+              />
+            </Form.Item>
+
+            <Form.Item
+              name="password"
+              rules={[{ required: true, message: 'Please enter your password!' }]}
+            >
+              <Input.Password
+                size="large"
+                prefix={<LockOutlined className="text-orange-400" />}
+                placeholder="Password"
+                className="rounded-xl shadow-sm hover:shadow-md transition-all"
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                block
+                size="large"
+                className="rounded-xl bg-orange-500 hover:bg-orange-400 text-white font-semibold shadow-lg"
+              >
+                Register
+              </Button>
+            </Form.Item>
+
+            <div className="text-center text-sm text-gray-600">
+              Already have an account?
+            </div>
+
+            <Form.Item>
+              <Button
+                onClick={() => navigate('/Mentorlog')}
+                block
+                size="large"
+                className="mt-2 rounded-xl border border-orange-400 text-orange-500 hover:bg-orange-100"
+              >
+                Sign In
+              </Button>
+            </Form.Item>
+
+            <div className="my-4">
+              <GoogleLogin />
+            </div>
+
+            {resData && (
+              <div className="text-center text-green-600 mt-3 text-sm">{resData}</div>
+            )}
+          </Form>
+        </div>
       </div>
+
+      <ToastContainer />
     </div>
   );
 };
 
-export default App;
+export default MentorRegister;
