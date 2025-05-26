@@ -23,7 +23,7 @@ const Button1 = () => {
     <div className=" w-fit  flex items-center gap-2 px-2 py-1">
       {/* Register Button */}
       <Popover placement="bottom" title="Register As" content={registerPopoverContent}>
-        <Button className="bg-orange-400 text-white text-xs font-semibold flex items-center gap-1 hover:bg-white hover:text-orange-400 transition">
+        <Button className="!bg-orange-400 !text-white !text-xs !font-semibold !flex !items-center !gap-1 !hover:bg-white !hover:text-orange-400 !transition">
           <FaRegistered className="text-base" /> Register
         </Button>
       </Popover>
@@ -33,7 +33,7 @@ const Button1 = () => {
 
       {/* Login Button */}
       <Button
-        className="bg-orange-400 text-white text-xs font-semibold flex items-center gap-1 hover:bg-white hover:text-orange-400 transition"
+        className="!bg-orange-400 !text-white !text-xs !font-semibold !flex !items-center !gap-1 !hover:bg-white !hover:text-orange-400 !transition"
         onClick={() => setIsLoginOpen(true)}
       >
         <RiLoginCircleFill className="text-base" />

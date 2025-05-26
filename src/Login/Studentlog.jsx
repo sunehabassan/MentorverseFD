@@ -6,7 +6,7 @@ import { Button, Form, Input, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import { baseURL } from "../../config";
 const Studentlog = ({ isModal = false }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ const Studentlog = ({ isModal = false }) => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/Studentlog", values);
+      const response = await axios.post(`${baseURL}/api/auth/Studentlog`, values);
       if (response.data.success) {
         const { token, username, email } = response.data.data;
 
